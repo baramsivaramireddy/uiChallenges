@@ -17,7 +17,9 @@ const HomePageComponent = () => {
     const navigate = useNavigate();
     let listOfLink = [
 
-        { link: '/day1', label: 'day one', description: 'a basic landing page' }
+        { link: '/day1', label: 'day one', description: 'a basic landing page' },
+        { link: '/day2', label: 'day two', description: 'a basic landing page' },
+        { link: '/day3', label: 'day three', description: 'a product card page' }
     ]
     return (<>
 
