@@ -34,9 +34,11 @@ const productDetails = {
 const UI = ({ productDetails }) => {
 
     return (<>
-        <div className="h-screen p-10">
+        <div className="min-h-screen p-10 relative">
 
-            <Heading productName={productDetails.name} />
+            <div className="my-5">
+                <Heading productName={productDetails.name} />
+            </div>
             <ImageComponent url={productDetails.image} />
             <div>
                 <ProductDetailsComponent
@@ -65,7 +67,7 @@ const Heading = (props) => {
     return (<>
         <div className="flex justify-between">
             <div>
-                <p> {productName}</p>
+                <p className="text-xl text-gray-400 font-bold"> {productName}</p>
             </div>
             <div>
                 <LoveComponent />
@@ -95,8 +97,8 @@ const ImageComponent = ({ url }) => {
 
     return (<>
 
-        <div>
-            <img src={url} alt={'image of product'} width={500} height={500} />
+        <div className="flex justify-center items-center" >
+            <img src={url} alt={'image of product'} width={200} height={300} />
         </div>
     </>)
 }
@@ -105,24 +107,24 @@ const ImageComponent = ({ url }) => {
 const ProductDetailsComponent = ({ title, city, country, color, size, weight }) => {
 
     return (<>
-        <div className="my-9">
-            <div>
-                <p>{title}</p>
+        <div className="my-9 flex flex-col gap-5">
+            <div className="">
+                <p className="text-3xl font-semibold">{title}</p>
                 <p> {city}, {country} </p>
             </div>
             <div>
 
                 <div className="flex justify-between">
-                    <p>Color </p>
-                    <p> {color}</p>
+                    <p className="text-gray-400 text-xl">Color </p>
+                    <p className="text-black font-semibold"> {color}</p>
                 </div>
                 <div className="flex justify-between">
-                    <p>size </p>
-                    <p> {size}</p>
+                    <p  className="text-gray-400 text-xl">size </p>
+                    <p className="text-black font-semibold"> {size}</p>
                 </div>
                 <div className="flex justify-between">
-                    <p>weight </p>
-                    <p> {weight}</p>
+                    <p className="text-gray-400 text-xl">weight </p>
+                    <p className="text-black font-semibold"> {weight}</p>
                 </div>
             </div>
         </div>
@@ -133,13 +135,13 @@ const ProductDetailsComponent = ({ title, city, country, color, size, weight }) 
 const ShopingCart = ({ actual, offering }) => {
 
     return (<>
-        <div className="flex  justify-between items-center">
+        <div className="flex   justify-between items-center">
             <div>
-                <p className="line-through"> ${actual}</p>
-                <p className=""> ${offering}</p>
+                <p className="line-through  text-gray-300 text-xl"> ${actual}</p>
+                <p className="text-black  font-bold text-xl"> ${offering}</p>
             </div>
-            <div>
-                <TiShoppingCart className="hover:text-blue text-2xl hover:bg-blue-500" />
+            <div className="bg-violet-500 rounded  p-2 hover:bg-blue-500">
+                <TiShoppingCart className="hover:text-blue  text-2xl hover:bg-blue-500" />
             </div>
         </div>
     </>)
